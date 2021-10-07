@@ -53,6 +53,7 @@ for (tt in train_types) {
           lambda=0,
           lp_solver = lp_solver,
           sort = TRUE,
+          nonneg = TRUE,
           zero_impute=signals_df$zero_impute[[idx]],
           resample = str_detect(tt, "bootstrapped"),
           debug = here::here(debug_dir, sprintf("%s_as_of", tt), signals_df$name[idx]))
